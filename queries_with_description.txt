@@ -1,0 +1,42 @@
+Jeremy
+
+
+1. simple one to get us started:
+
+      select * from Professors where last_name = "Nash";
+
+
+2. select all professors who have not been assigned a course
+
+      select * from professors where course_id = 0;
+
+
+3. select all professors who have more than 5 years of experience
+
+      select * from professors where yrs_experience > 5;
+
+
+4. select all class to be offered in the Fall of 2014
+      
+      select * from courses where next_semester_taught = "Fall 2014";
+
+
+5. show teacher of basket weaving class plus class info
+
+    select * from professors
+    inner join courses on professors.course_id = courses.id
+    where name LIKE "Baske%";
+
+
+6. show all class, professor, and subject info about classes whose subject is Religion
+
+    select * from professors
+    inner join courses on professors.course_id = courses.id
+    inner join subjects on professors.subject_id = subjects.id
+    where subjects.name = "Religion";
+
+7. show all class and professor information for classes to be taught in the fall of 2014
+    
+    select * from professors
+    inner join courses on professors.course_id = courses.id
+    where courses.next_semester_taught = "Fall 2014";
