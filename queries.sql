@@ -31,3 +31,9 @@ SELECT courses.name,
 FROM courses INNER JOIN professors ON courses.professor_id = professors.id
 where courses.last_semester_taught = "Winter 2013"
 Group by courses.name;
+
+select courses.name,
+    courses.course_number,
+    subjects.name
+from courses inner join subjects on courses.subject_id = subjects.id
+where courses.course_number > 200 and subjects.name = "History";
