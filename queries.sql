@@ -24,8 +24,10 @@ Inner JOIN courses on professors.course_id = courses.id
 where professors.yrs_experience > 3
 GROUP BY first_name;
 
- -- Select name, next_semester_taught from courses
- -- Inner Join professors on courses.professor_id = professors.id
- -- Select professors.first_name
- -- where courses.last_semester_taught = "Winter 2013"
- -- Group by name;
+SELECT courses.name, 
+  courses.course_number, 
+  professors.first_name, 
+  professors.last_name
+FROM courses INNER JOIN professors ON courses.professor_id = professors.id
+where courses.last_semester_taught = "Winter 2013"
+Group by courses.name;
