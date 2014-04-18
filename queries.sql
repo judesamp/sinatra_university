@@ -4,7 +4,7 @@ select * from professors where course_id = 0;
 
 select * from professors where yrs_experience > 5;
 
-select * from courses where next_semester_taught = "Fall 2014";
+select * from courses where next_semester_taught = "2014-09-01";
 
 select * from professors
 inner join courses on professors.course_id = courses.id
@@ -17,7 +17,7 @@ where subjects.name = "Religion";
 
 select * from professors
 inner join courses on professors.course_id = courses.id
-where courses.next_semester_taught < "Fall 2014";
+where courses.next_semester_taught < "2014-09-01";
 
 Select * from professors
 Inner JOIN courses on professors.course_id = courses.id 
