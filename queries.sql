@@ -17,19 +17,23 @@ where subjects.name = "Religion";
 
 select * from professors
 inner join courses on professors.course_id = courses.id
-where courses.next_semester_taught = "Fall 2014";
+where courses.next_semester_taught < "Fall 2014";
 
 Select * from professors
 Inner JOIN courses on professors.course_id = courses.id 
 where professors.yrs_experience > 3
 GROUP BY first_name;
 
+select * from professors
+inner join courses on professors.course_id = courses.id
+where courses.last_semester_taught < "2012-01-01";
+
 SELECT courses.name, 
   courses.course_number, 
   professors.first_name, 
   professors.last_name
 FROM courses INNER JOIN professors ON courses.professor_id = professors.id
-where courses.last_semester_taught = "Winter 2013"
+where courses.last_semester_taught = "2012-01-01"
 Group by courses.name;
 
 select courses.name,

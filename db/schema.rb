@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418030708) do
+ActiveRecord::Schema.define(version: 20140418123453) do
 
   create_table "courses", force: true do |t|
     t.string  "name"
     t.integer "course_number"
-    t.string  "last_semester_taught"
-    t.string  "next_semester_taught"
+    t.date    "last_semester_taught", limit: 255
+    t.date    "next_semester_taught", limit: 255
     t.integer "subject_id"
     t.integer "professor_id"
   end
