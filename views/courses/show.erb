@@ -4,8 +4,13 @@
     <h3 class="center_me"><%= @course.name %><%= @course.course_number %></h1>
     <p>Last taught: <%= @course.last_semester_taught %></p>
     <p>Scheduled for: <%= @course.next_semester_taught %></p>
-    <p>Professor: <%= @course.professor.first_name %> <%= @course.professor.last_name %></p>
-    <p>Class held in <%= @course.building.name %>.</p>
+    <% if @course.professor %>
+        <p>Professor: <%= @course.professor.first_name %> <%= @course.professor.last_name %></p>
+    <% end %>
+    <% if @course.building %>
+        <p>Class held in <%= @course.building.name %>.</p>
+    <% end %>
+
     
 
     </div>

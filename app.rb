@@ -105,6 +105,7 @@ end
 
 # create
 post "/courses" do
+  puts params
   course = Course.new(params[:course])
   if course.save
     redirect '/courses'

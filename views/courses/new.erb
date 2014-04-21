@@ -33,6 +33,7 @@
          <div class="form-group">
           <label for="name">Choose a professor to teach this class</label>
           <select class="form-control" name="[course]professor_id">
+            <option disabled selected>Choose a professor</option>
             <% @professors.each do |professor| %>
               <option value="<%= professor.id%>"><%= professor.first_name %> <%= professor.last_name %></option>
             <% end %>
@@ -42,8 +43,8 @@
         
         <div class="form-group">
           <label for="name">Choose the building where this class will be taught</label>
-
            <select class="form-control" name="[course]building_id">
+            <option disabled selected>Choose a building</option>
             <% @buildings.each do |building| %>
               <option value="<%= building.id%>"><%= building.name %> </option>
             <% end %>

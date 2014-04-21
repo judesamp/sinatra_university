@@ -8,7 +8,8 @@
             
               <li class="list-group-item">
                 <a href="/courses/<%= course.id %>">
-                  <%= course.name %>: <%= course.course_number %> (<%= course.professor.first_name %> <%= course.professor.last_name %>) 
+                  <%= course.name %>: <%= course.course_number %> <% if course.professor %>(<%= course.professor.first_name %> <%= course.professor.last_name %>)
+                  <% end %> 
                 </a>
                   <a href="/courses/<%= course.id %>/edit" class="leftpadded pull-right">Edit</a>
                   <a href="/courses/<%= course.id %>" class="view_link pull-right">View</a>
