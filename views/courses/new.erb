@@ -1,4 +1,3 @@
-
 <div class="listed col-md-6 col-md-offset-3">
   <div class="gray">
     <div class="marge">
@@ -18,7 +17,7 @@
 
         <div class="form-group">
           <label for="name">Course number</label>
-          <input type="text" class="form-control" id="number" name="[course]number" placeholder="Enter a number for this course">
+          <input type="text" class="form-control" id="number" name="[course]course_number" placeholder="Enter a number for this course">
         </div>
 
         <div class="form-group">
@@ -32,13 +31,24 @@
         </div>
 
          <div class="form-group">
-          <label for="name">Professor ID</label>
-          <input type="text" class="form-control" id="professor_id" name="[course]professor_id" placeholder="Professor ID">
+          <label for="name">Choose a professor to teach this class</label>
+          <select class="form-control" name="[course]professor_id">
+            <% @professors.each do |professor| %>
+              <option value="<%= professor.id%>"><%= professor.first_name %> <%= professor.last_name %></option>
+            <% end %>
+          </select>
+          
         </div>
         
         <div class="form-group">
-          <label for="name">Subject ID</label>
-          <input type="text" class="form-control" id="subject_id" name="[course]subject_id" placeholder="Subject ID">
+          <label for="name">Choose the building where this class will be taught</label>
+
+           <select class="form-control" name="[course]building_id">
+            <% @buildings.each do |building| %>
+              <option value="<%= building.id%>"><%= building.name %> </option>
+            <% end %>
+          </select>
+          
         </div>
         
         <button type="submit" class="btn btn-default">Submit</button>

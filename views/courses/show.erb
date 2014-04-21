@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="show">
+    <h3 class="center_me"><%= @course.name %><%= @course.course_number %></h1>
+    <p>Last taught: <%= @course.last_semester_taught %></p>
+    <p>Scheduled for: <%= @course.next_semester_taught %></p>
+    <p>Professor: <%= @course.professor.first_name %> <%= @course.professor.last_name %></p>
+    <p>Class held in <%= @course.building.name %>.</p>
+    
+
+    </div>
+    <p>Click <a href="/courses/<%= @course.id %>/edit" class="leftpadded">here</a> to edit.</p>
+  </div>
+</div>

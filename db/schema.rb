@@ -10,27 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418123453) do
+ActiveRecord::Schema.define(version: 20140418153102) do
+
+  create_table "buildings", force: true do |t|
+    t.string  "name"
+    t.integer "number_of_rooms"
+  end
 
   create_table "courses", force: true do |t|
     t.string  "name"
     t.integer "course_number"
     t.date    "last_semester_taught", limit: 255
     t.date    "next_semester_taught", limit: 255
-    t.integer "subject_id"
     t.integer "professor_id"
+    t.integer "building_id"
   end
 
   create_table "professors", force: true do |t|
     t.string  "first_name"
     t.string  "last_name"
     t.integer "yrs_experience"
-    t.integer "course_id"
-    t.integer "subject_id"
-  end
-
-  create_table "subjects", force: true do |t|
-    t.string "name"
   end
 
 end

@@ -1,1 +1,23 @@
-professors index
+<div class="container">
+  <div class="row">
+    <div class="listed col-md-6 col-md-offset-3">
+        <p>Click on a professor to see more detailed information or click <a href="/professors/new">here</a> to create a new professor.</p>
+          <ul class="no_decoration list-group">
+
+          <% @professors.each do |professor| %>
+            
+            
+              <li class="list-group-item">
+                <a href="/professors/<%= professor.id %>">
+                  <%= professor.first_name %> <%= professor.last_name %>: <%= professor.yrs_experience %> years experience
+                </a>
+                  <a href="/professors/<%= professor.id %>/edit" class="leftpadded pull-right">Edit</a>
+                  <a href="/professors/<%= professor.id %>" class="view_link pull-right">View</a>
+              </li>
+
+            
+          <% end %>
+        </ul>
+    </div> 
+  </div>
+</div>
