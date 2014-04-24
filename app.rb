@@ -63,6 +63,7 @@ put "/professors/:id" do
   end
 end
 
+
 # delete
 delete "/professors/:id" do
   professor = Professor.find(params[:id])
@@ -206,7 +207,7 @@ delete "/buildings/:id" do
 end
 
 get "/error" do
-  "You can't just submit a bunch of blanks."
+  "There was a problem."
 end
 
 

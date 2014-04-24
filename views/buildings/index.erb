@@ -2,7 +2,7 @@
   <div class="row">
     <div class="listed col-md-6 col-md-offset-3">
         <p>Click on a building to see more detailed information or click <a href="/buildings/new">here</a> to create a new building.</p>
-          <ul class="no_decoration list-group">
+        <ul class="no_decoration list-group">
 
           <% @buildings.each do |building| %>
             
@@ -15,7 +15,7 @@
                   <a href="/buildings/<%= building.id %>" class="view_link pull-right">View</a>
               </li>
 
-            
+          
           <% end %>
         </ul>
     </div> 
